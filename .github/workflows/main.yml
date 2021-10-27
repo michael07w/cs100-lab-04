@@ -24,13 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       # Install latest CMake
       - uses: lukka/get-cmake@latest
-      
-      # Restore from cache the previously built ports
-      - name: Restore artifacts, or setup vcpkg (do not install any package)
-        run: lukka/run-vcpkg@v10
         
       # Run CMake
       - name: Run CMake
