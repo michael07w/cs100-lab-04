@@ -24,6 +24,23 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      # Install latest CMake
+      - uses: lukka/get-cmake@latest
+      
+      # Restore from cache the previously built ports
+      - name: Restore artifacts, or setup vcpkg (do not install any package)
+        run: lukka/run-vcpkg@v10
+        
+      # Run CMake
+      - name: Run CMake
+        uses: lukka/run-cmake@v10
+        with:
+          cmakeListsTxtPath: 'lab-04---github-actions-mwess005-skudt001/CMakeLists.txt'
+          
+      # Run our unit tests
+      - name: Run Unit Tests
+        run: ./test
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -34,15 +51,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          
-      # Create Makefile to build tests
-      - name: Create Makefile for tests
-        run: cmake3 .
         
-      # Run our Makefile
-      - name: Run Makefile
-        run: make
-        
-      # Run our unit tests
-      - name: Run Unit Tests
-        run: ./test
