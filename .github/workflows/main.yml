@@ -32,7 +32,7 @@ jobs:
       - name: Run CMake
         uses: lukka/run-cmake@v10
         with:
-          cmakeListsTxtPath: 'lab-04---github-actions-mwess005-skudt001/CMakeLists.txt'
+          cmakeListsTxtPath: 'CMakeLists.txt'
           
       # Run our unit tests
       - name: Run Unit Tests
