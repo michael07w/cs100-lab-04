@@ -24,6 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      # Initialize googletest submodule
+      - name: Initialize Googletest
+        run: git submodule update --init --recursive
 
       # Install latest CMake
       - uses: lukka/get-cmake@latest
