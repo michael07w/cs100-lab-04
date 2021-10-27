@@ -30,7 +30,7 @@ jobs:
         
       # Run CMake
       - name: Run CMake
-        run: cmake3 .
+        run: cmake .
         
       # Run Makefile
       - name: Run Makefile
