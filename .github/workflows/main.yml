@@ -30,7 +30,10 @@ jobs:
         run: git submodule update --init --recursive
 
       # Install latest CMake
-      - uses: lukka/get-cmake@latest
+      - name: Install CMake
+        uses: jwlawson/actions-setup-cmake@v1.9
+        with:
+          cmake-version: '3.17.5'
         
       # Run CMake
       - name: Run CMake
