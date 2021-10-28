@@ -1,4 +1,4 @@
-#include "../src/rectangle.cpp"
+#include "../header/rectangle.hpp"
 #include "gtest/gtest.h"
 
 TEST(ConstructorTest, NoParams) {
