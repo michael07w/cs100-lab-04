@@ -26,6 +26,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
+          
+      # Check to make sure files are present
+      - name: Check for src files
+        run: cd src/ && ls
 
       # Install latest CMake
       - name: Install CMake
