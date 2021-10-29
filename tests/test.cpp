@@ -31,6 +31,24 @@ TEST(AreaTest, AreaIsZero) {
 	delete r;
 }
 
+TEST(PerimeterTest, TwoParams) {
+	Rectangle *r = new Rectangle(1,2);
+	EXPECT_EQ(r->perimeter(), 5);
+	delete r;
+}
+
+TEST(PerimeterTest, UsingZero) {
+	Rectangle *r = new Rectangle();
+	EXPECT_EQ(r->perimeter(), 0);
+	delete r;
+}
+
+TEST(PerimeterTest, ZeroInConstructor) {
+	Rectangle *r = new Rectangle(0,1);
+	EXPECT_EQ(r->perimeter(), 10);
+	delete r;
+}
+
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
