@@ -3,13 +3,13 @@
 
 TEST(ConstructorTest, NoParams) {
 	Rectangle* r = new Rectangle();
-	EXPECT_EQ(r->get_height(), 0);
+	EXPECT_EQ(r->get_width(), 0);
 	delete r;
 }
 
 TEST(ConstructorTest, TwoParams) {
 	Rectangle* r = new Rectangle(1, 2);
-	EXPECT_EQ(r->get_width(), 2);
+	EXPECT_EQ(r->get_height(), 2);
 	delete r;
 }
 
