@@ -13,17 +13,25 @@ TEST(ConstructorTest, TwoParams) {
 	delete r;
 }
 
-TEST(FailingConstructorTest, NoParams) {
-        Rectangle* r = new Rectangle();
-        EXPECT_EQ(r->area(), 1);
-        delete r;
+TEST(FailingAreaTest, TwoParams) {
+	Rectangle *r = new Rectangle(4, 4);
+	EXPECT_EQ(r->area(), 8);
+	delete r;
 }
 
-TEST(FailingConstructorTest, TwoParams) {
-        Rectangle* r = new Rectangle(1, 2);
-        EXPECT_EQ(r->area(), 0);
-        delete r;
+TEST(FailingAreaTest, TryingZero) {
+	Rectangle *r = new Rectangle(0, 0);
+	EXPECT_EQ(r->area(), 5);
+	delete r;
 }
+
+TEST(FailingAreaTest, AreaIsZero) {
+	Rectangle *r = new Rectangle();
+	EXPECT_EQ(r->area(), 0);
+	delete r;
+}
+
+
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
