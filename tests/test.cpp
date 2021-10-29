@@ -3,7 +3,7 @@
 
 TEST(ConstructorTest, NoParams) {
 	Rectangle* r = new Rectangle();
-	EXPECT_EQ(r->get_length(), 0);
+	EXPECT_EQ(r->get_height(), 0);
 	delete r;
 }
 
