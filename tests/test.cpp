@@ -13,24 +13,23 @@ TEST(ConstructorTest, TwoParams) {
 	delete r;
 }
 
-TEST(FailingAreaTest, TwoParams) {
+TEST(AreaTest, TwoParams) {
 	Rectangle *r = new Rectangle(4, 4);
 	EXPECT_EQ(r->area(), 8);
 	delete r;
 }
 
-TEST(FailingAreaTest, TryingZero) {
+TEST(AreaTest, TryingZero) {
 	Rectangle *r = new Rectangle(0, 0);
 	EXPECT_EQ(r->area(), 5);
 	delete r;
 }
 
-TEST(FailingAreaTest, AreaIsZero) {
+TEST(AreaTest, AreaIsZero) {
 	Rectangle *r = new Rectangle();
 	EXPECT_EQ(r->area(), 0);
 	delete r;
 }
-
 
 
 int main(int argc, char **argv) {
