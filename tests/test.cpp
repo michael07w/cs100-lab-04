@@ -13,6 +13,13 @@ TEST(ConstructorTest, TwoParams) {
 	delete r;
 }
 
+TEST(ConstructorTest, ZeroParams) {
+	Rectangle* r = new Rectangle(0, 0);
+	EXPECT_EQ(r->get_height(), 0);
+	EXPECT_EQ(r->get_width(), 0);
+	delete r;
+}
+
 TEST(AreaTest, TwoParams) {
 	Rectangle *r = new Rectangle(4, 4);
 	EXPECT_EQ(r->area(), 8);
